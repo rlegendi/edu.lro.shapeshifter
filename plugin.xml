@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+<plugin>
+   <extension
+         point="org.eclipse.ecf.presence.bot.chatRoomRobot">
+      <chatRoomRobot
+            connectId="irc://sshifter2@irc.freenode.net"
+            containerFactoryName="ecf.irc.irclib"
+            id="edu.lro.shapeshifter.sshifter"
+            name="ShapeShift">
+         <chatRooms
+               name="#robotest">
+         </chatRooms>
+      </chatRoomRobot>
+   </extension>
+   <extension
+         point="org.eclipse.ecf.presence.bot.chatRoomMessageHandler">
+      <handler
+            chatRoomRobotId="edu.lro.shapeshifter.sshifter"
+            class="edu.lro.shapeshifter.Shapeshifter"
+            filterExpression=".*">
+      </handler>
+   </extension>
+
+</plugin>
